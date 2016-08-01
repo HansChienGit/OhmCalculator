@@ -1,0 +1,48 @@
+﻿@model OhmCalculator.Controllers.HomeViewModel
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="BandA" class="col-sm-2 control-label">Band A</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(x => x.BandA, Model.BandAList, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="BandB" class="col-sm-2 control-label">Band B</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(x => x.BandB, Model.BandBList, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="BandC" class="col-sm-2 control-label">Band C</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(x => x.BandC, Model.BandCList, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="BandD" class="col-sm-2 control-label">Band D</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(x => x.BandD, Model.BandDList, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Calculate</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Ohm Value</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">@Model.OhmValue.ToString("N0") &Omega; &plusmn;@Model.Tolerance%</p>
+            </div>
+        </div>
+        
+    </div>
+}
